@@ -1,0 +1,11 @@
+FROM jre-alpine
+WORKDIR /data
+COPY spring-boot-example/build/libs/samplemicroservice.jar
+CMD ["-jar", "samplemicroservice.jar"]
+FROM jre-alpine
+WORKDIR /data
+COPY build/libs/samplemicroservice.jar
+CMD ["-jar", "samplemicroservice.jar"]
+ENTRYPOINT ["java"]
+
+
